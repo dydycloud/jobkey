@@ -36,7 +36,7 @@
                 </li>
                 <li class="list-group-item">
                 <br>
-                    <a href="{{ path('mnk_job') }}" class="btn btn-info">Back to the list</a>
+                    <a href="{{ path('mnk_job') }}" class="btn btn-info"><span class="glyphicon glyphicon-chevron-left"></span>Back to the list</a>
                 </li>
             </ul>
         </div>
@@ -55,7 +55,7 @@
                         </p>
                         <p>posted on {{ entity.createdat|date("m/d/Y", "Europe/Paris") }}</p>
                         <p>
-                            <a href="{{ path('mnk_job_edit', { 'id': entity.id }) }}" class="btn btn-warning">Edit</a>
+                            <a href="{{ path('mnk_job_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
                             {{ form(delete_form) }}
                         </p>
                     </div>

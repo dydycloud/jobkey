@@ -31,7 +31,7 @@
                 </div>
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="/">Jobs to Unlock your skills</a></li>
+                    <li class="active"><a href="{{path('jobkey_homepage')}}">Jobs to Unlock your skills</a></li>
                     <li><a href="#">Home</a></li>
                     <li><a href="{{path('mnk_job')}}">About</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -58,8 +58,6 @@
             {% block body %}
 
             {% endblock %}
-        </div>
-        <div id="footer">
         </div>
         {% block javascripts %}
              <!-- build:js scripts/main.min.js -->

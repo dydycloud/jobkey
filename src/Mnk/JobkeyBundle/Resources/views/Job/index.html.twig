@@ -11,30 +11,24 @@
     <br><br>
     <div class="table-responsive">
         <table class="table">
-            <thead>
-                <tr>
-                    <th>Logo</th>
-                    <th>Company</th>
-                    <th>Position</th>
-                    <th>Type</th>
-                    <th>Location</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
             <tbody>
             {% for entity in entities %}
                 <tr class="{{ cycle(['info','success'],loop.index) }}">
                     <td><img src="{{ asset('upload/jobs/'~entity.logo) }}" alt="{{entity.logo}}" width="90px" /></td>
                     <td>{{ entity.company }}</td>
-                    <td>{{ entity.position }}</td>
+                    <td>
+                        <a href="{{ path('mnk_job_show', { 'id': entity.id, 'company': entity.company, 'location': entity.location, 'position': entity.position }) }}" class="btn btn-info">
+                            {{ entity.position }}
+                        </a>
+                    </td>
                     <td>{{ entity.type }}</td>
                     <td>{{ entity.location }}</td>
                     <td>
                         <ul>
                             <li>
-                                <a href="{{ path('mnk_job_show', { 'id': entity.id }) }}" class="btn btn-info">show</a>
+                                <a href="{{ path('mnk_job_show', { 'id': entity.id, 'company': entity.company, 'location': entity.location, 'position': entity.position }) }}" class="btn btn-info"><span class="glyphicon glyphicon-eye-open"></span></a>
                             
-                                <a href="{{ path('mnk_job_edit', { 'id': entity.id }) }}" class="btn btn-warning">edit</a>
+                                <a href="{{ path('mnk_job_edit', { 'id': entity.id }) }}" class="btn btn-warning"><span class="glyphicon glyphicon-pencil"></span></a>
                             </li>
                         </ul>
                     </td>

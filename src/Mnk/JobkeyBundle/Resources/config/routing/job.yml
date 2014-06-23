@@ -3,7 +3,7 @@ mnk_job:
     defaults: { _controller: "JobkeyBundle:Job:index" }
 
 mnk_job_show:
-    pattern:  /{id}/show
+    pattern:  /{company}/{location}/{id}/{position}
     defaults: { _controller: "JobkeyBundle:Job:show" }
 
 mnk_job_new:
