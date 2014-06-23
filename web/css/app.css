@@ -1,0 +1,48 @@
+.container{
+	margin: 60px auto;
+}
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  color: #434A54;
+}
+
+.alert-info{
+	background-color: #37BC9B;
+	border:	#48CFAD;
+}
+.navbar-inverse{
+	background-color: #37BC9B;
+	border:	#48CFAD;
+}
+.navbar-inverse .navbar-nav>.active>a, .navbar-inverse .navbar-nav>.active>a:hover, .navbar-inverse .navbar-nav>.active>a:focus{
+	background-color: #48CFAD;
+}
+.nav.navbar-nav li a{
+	color: #434A54;
+}
+.ad{
+	margin-top: 20px
+}
+.navbar-inverse .btn-link, .navbar-inverse .navbar-brand, .navbar-inverse .navbar-link.navbar-inverse .navbar-brand.logo h3{
+	color: #434A54;
+}
+
+th td{
+	text-align: center;
+}
+ul{
+	list-style-type: none;
+}
+#footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 190px;
+	background: url(../img/FooterBg.png) repeat-x bottom;
+}
+.btn{
+	color: #434A54;
+}

@@ -1,0 +1,68 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    {{ entity.company }} is looking for a {{ entity.position }}
+{% endblock %}
+
+{% block body -%}
+    <div class="center-block">
+        <h3>{{ entity.company }} is looking for a {{ entity.position }}</h3>
+        <br>
+    </div>
+    <div class="panel panel-info ad">
+      <div class="panel-heading">
+        <h1 class="panel-title">
+            <strong>
+                Type: {{ entity.type|upper }}
+                <span class="pull-right">City: {{ entity.location|upper }}</span>
+            </strong>
+        </h1>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-xs-12 col-sm-6 col-md-8">
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <h5 class="center-block">Description</h5>
+                </li>
+                <li class="list-group-item">
+                    <p>{{ entity.description }}</p>
+                </li>
+                <li class="list-group-item">
+                    <h5 class="center-block">How_to_apply</h5>
+                </li>
+                <li class="list-group-item">
+                    {{ entity.howtoapply }}
+                </li>
+                <li class="list-group-item">
+                <br>
+                    <a href="{{ path('mnk_job') }}" class="btn btn-info">Back to the list</a>
+                </li>
+            </ul>
+        </div>
+        <div class="col-xs-6 col-md-4">
+            {% if entity.logo %}
+                <div class="jumbotron">
+                    <div class="jumbotron-photo">
+                        <a href="{{ entity.url }}">
+                            <img src="{{ asset('upload/jobs/'~entity.logo) }}"
+                              alt="{{ entity.company }} logo" />
+                        </a>
+                    </div>
+                    <div class="jumbotron-contents">
+                        <p>
+                            <a href="{{ entity.url }}" target="_blank">{{ entity.company }} Website</a>
+                        </p>
+                        <p>posted on {{ entity.createdat|date("m/d/Y", "Europe/Paris") }}</p>
+                        <p>
+                            <a href="{{ path('mnk_job_edit', { 'id': entity.id }) }}" class="btn btn-warning">Edit</a>
+                            {{ form(delete_form) }}
+                        </p>
+                    </div>
+                </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

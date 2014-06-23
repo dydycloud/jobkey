@@ -1,0 +1,7 @@
+parameters:
+#    jobkey.example.class: Mnk\JobkeyBundle\Example
+
+services:
+#    jobkey.example:
+#        class: %jobkey.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

@@ -1,0 +1,30 @@
+mnk_job:
+    pattern:  /
+    defaults: { _controller: "JobkeyBundle:Job:index" }
+
+mnk_job_show:
+    pattern:  /{id}/show
+    defaults: { _controller: "JobkeyBundle:Job:show" }
+
+mnk_job_new:
+    pattern:  /new
+    defaults: { _controller: "JobkeyBundle:Job:new" }
+
+mnk_job_create:
+    pattern:  /create
+    defaults: { _controller: "JobkeyBundle:Job:create" }
+    requirements: { _method: post }
+
+mnk_job_edit:
+    pattern:  /{id}/edit
+    defaults: { _controller: "JobkeyBundle:Job:edit" }
+
+mnk_job_update:
+    pattern:  /{id}/update
+    defaults: { _controller: "JobkeyBundle:Job:update" }
+    requirements: { _method: post|put }
+
+mnk_job_delete:
+    pattern:  /{id}/delete
+    defaults: { _controller: "JobkeyBundle:Job:delete" }
+    requirements: { _method: post|delete }

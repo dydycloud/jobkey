@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="A Job Board Web App">
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+
+   
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+        {% block stylesheets %}
+            <!-- build:css styles/components/main.min.css -->
+            <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}"  media="all">
+            <link rel="stylesheet" href="{{ asset('css/bootflat.min.css') }}"  media="all">
+            <link rel="stylesheet" href="{{ asset('css/app.css') }}"  media="all">
+            <!-- endbuild -->
+        {% endblock %}
+    </head>
+    <body>
+        <div class="container">
+            <div class="navbar navbar-inverse navbar-fixed-top">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar">_</span>
+                    <span class="icon-bar">_</span>
+                    <span class="icon-bar">_</span>
+                  </button>
+                  <cite class="navbar-brand logo"><strong>JobKey</strong></cite>
+                </div>
+                <div class="navbar-collapse collapse">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="/">Jobs to Unlock your skills</a></li>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="{{path('mnk_job')}}">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                  </ul>
+                  <form class="navbar-form navbar-right" role="form">
+                    <div class="form-group">
+                      <input type="text" placeholder="Search city, country, position" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Search</button>
+                  </form>
+                </div>
+            </div>
+            {% for flashMessage in app.session.flashbag.get('notice') %}
+                <div class="flash-notice">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+     
+            {% for flashMessage in app.session.flashbag.get('error') %}
+                <div class="flash-error">
+                    {{ flashMessage }}
+                </div>
+            {% endfor %}
+            {% block body %}
+
+            {% endblock %}
+        </div>
+        <div id="footer">
+        </div>
+        {% block javascripts %}
+             <!-- build:js scripts/main.min.js -->
+            <script src="{{ asset('js/jquery.min.js') }}"></script>
+            <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+            <!-- endbuild -->
+        {% endblock %}
+    </body>
+</html>

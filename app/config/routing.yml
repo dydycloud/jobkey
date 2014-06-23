@@ -1,0 +1,4 @@
+jobkey:
+    resource: "@JobkeyBundle/Resources/config/routing.yml"
+    prefix:   /
+

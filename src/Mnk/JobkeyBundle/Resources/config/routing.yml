@@ -1,0 +1,11 @@
+jobkey_homepage:
+    pattern:  /
+    defaults: { _controller: JobkeyBundle:Job:index }
+
+jobkey_hello:
+    path:      /hello/{name}
+    defaults:  { _controller: JobkeyBundle:Default:hello }
+
+JobkeyBundle_mnk_job:
+    resource: "@JobkeyBundle/Resources/config/routing/job.yml"
+    prefix:   /mnk_job
