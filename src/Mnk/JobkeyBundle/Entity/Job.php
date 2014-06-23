@@ -3,6 +3,7 @@
 namespace Mnk\JobkeyBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Mnk\JobkeyBundle\Utils\Jobkey as Jobkey;
 
 /**
  * Job
@@ -472,6 +473,22 @@ class Job
     {
         return $this->category;
     }
+
+    public function getCompanySlug()
+    {
+        return Jobkey::slugify($this->getCompany());
+    }
+ 
+    public function getPositionSlug()
+    {
+        return Jobkey::slugify($this->getPosition());
+    }
+ 
+    public function getLocationSlug()
+    {
+        return Jobkey::slugify($this->getLocation());
+    }
+
     /**
      * @ORM\PrePersist
      */

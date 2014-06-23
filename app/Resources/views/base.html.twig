@@ -31,17 +31,10 @@
                 </div>
                 <div class="navbar-collapse collapse">
                   <ul class="nav navbar-nav">
-                    <li class="active"><a href="{{path('jobkey_homepage')}}">Jobs to Unlock your skills</a></li>
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{{path('jobkey_homepage')}}">Home</a></li>
                     <li><a href="{{path('mnk_job')}}">About</a></li>
                     <li><a href="#contact">Contact</a></li>
                   </ul>
-                  <form class="navbar-form navbar-right" role="form">
-                    <div class="form-group">
-                      <input type="text" placeholder="Search city, country, position" class="form-control">
-                    </div>
-                    <button type="submit" class="btn btn-success">Search</button>
-                  </form>
                 </div>
             </div>
             {% for flashMessage in app.session.flashbag.get('notice') %}
@@ -55,6 +48,16 @@
                     {{ flashMessage }}
                 </div>
             {% endfor %}
+            <form class="" role="form">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Enter some keywords (city, country, position, ...)">
+                  <span class="input-group-btn">
+                    <button class="btn btn-info" type="button">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                  </span>
+                </div><!-- /input-group -->
+            </form>
             {% block body %}
 
             {% endblock %}
